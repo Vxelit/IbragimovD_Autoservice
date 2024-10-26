@@ -152,5 +152,15 @@ namespace IbragimovD_Autoservice
 
 
         }
+
+        private void LeftDirButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightDirButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

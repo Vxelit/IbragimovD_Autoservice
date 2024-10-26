@@ -62,6 +62,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
 
                         <Image Width="200" Grid.Column="0" Grid.RowSpan="4" Stretch="UniformToFill" HorizontalAlignment="Center">
@@ -88,6 +89,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="LeftDirButton" Content="&lt;" Width="20" Height="20"
+                    Click="LeftDirButton_Click"></Button>
+            <ListBox FontSize="20" Name="PageListBox">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <Button Name="RightDirButton" Content="&gt;" Width="20" Height="20"
+                    Click="RightDirButton_Click"></Button>
+        </StackPanel>
     </Grid>
 </Page>
