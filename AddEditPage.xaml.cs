@@ -33,6 +33,7 @@ namespace IbragimovD_Autoservice
             }
 
             DataContext = _currentService;
+            _currentService.DiscountInt = 0;
 
         }
 
@@ -46,7 +47,7 @@ namespace IbragimovD_Autoservice
             if (string.IsNullOrWhiteSpace(_currentService.Cost.ToString()) || _currentService.Cost == 0) //changed
                 errors.AppendLine("Укажите стоимость услуги");
 
-            if (string.IsNullOrWhiteSpace(_currentService.Discount.ToString())) //changed
+            if (string.IsNullOrWhiteSpace(_currentService.DiscountInt.ToString())) //changed
                 errors.AppendLine("Укажите скидку на услугу");
 
             if (string.IsNullOrWhiteSpace(_currentService.DurationInSeconds))
