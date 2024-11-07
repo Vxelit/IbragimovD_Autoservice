@@ -50,7 +50,7 @@ namespace IbragimovD_Autoservice
             if (string.IsNullOrWhiteSpace(_currentService.DiscountInt.ToString())) //changed
                 errors.AppendLine("Укажите скидку на услугу");
 
-            if (string.IsNullOrWhiteSpace(_currentService.DurationInSeconds))
+            if (string.IsNullOrWhiteSpace(_currentService.DurationInSeconds.ToString()) || _currentService.DurationInSeconds == 0)
                 errors.AppendLine("Укажите длительность услуги");
 
             if (errors.Length > 0)

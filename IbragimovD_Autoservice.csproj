@@ -68,56 +68,59 @@
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientService.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
-    <Compile Include="IbragimovDModel.Context.cs">
+    <Compile Include="IbragimovD_Autoservice.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IbragimovDModel.Context.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="IbragimovDModel.cs">
+    <Compile Include="IbragimovD_Autoservice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
-    <Compile Include="IbragimovDModel.Designer.cs">
+    <Compile Include="IbragimovD_Autoservice.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IbragimovDModel.edmx</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.edmx</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Manufacturer.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductPhoto.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSale.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServicePhoto.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tag.cs">
-      <DependentUpon>IbragimovDModel.tt</DependentUpon>
+      <DependentUpon>IbragimovD_Autoservice.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -136,6 +139,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,12 +165,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="IbragimovDModel.edmx">
+    <EntityDeploy Include="IbragimovD_Autoservice.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IbragimovDModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>IbragimovD_Autoservice.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="IbragimovDModel.edmx.diagram">
-      <DependentUpon>IbragimovDModel.edmx</DependentUpon>
+    <None Include="IbragimovD_Autoservice.edmx.diagram">
+      <DependentUpon>IbragimovD_Autoservice.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -181,16 +188,6 @@
     <Resource Include="images\service_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IbragimovDModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IbragimovDModel.Context.cs</LastGenOutput>
-      <DependentUpon>IbragimovDModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="IbragimovDModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IbragimovDModel.edmx</DependentUpon>
-      <LastGenOutput>IbragimovDModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Услуги автосервиса\diz.jpg" />
     <Resource Include="Услуги автосервиса\rulevoe-upravlenie-avtomobilya.jpg" />
     <Resource Include="Услуги автосервиса\transmission.jpg" />
@@ -213,6 +210,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="IbragimovD_Autoservice.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IbragimovD_Autoservice.edmx</DependentUpon>
+      <LastGenOutput>IbragimovD_Autoservice.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IbragimovD_Autoservice.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IbragimovD_Autoservice.edmx</DependentUpon>
+      <LastGenOutput>IbragimovD_Autoservice.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

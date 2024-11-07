@@ -85,6 +85,7 @@
                         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
                             <Button Name="EditButton" Content="Редактировать" Margin="2" Click="EditButton_Click"></Button>
                             <Button Name="DeleteButton" Content="Удалить" Margin="2" Click="DeleteButton_Click"></Button>
+                            <Button Name="SignUpButton" Content="Записать" Margin="2" Click="SignUpButton_Click"></Button>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

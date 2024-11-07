@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\Projects\C#\IbragimovD_Autoservice\IbragimovDModel.edmx" включено. 
+﻿// Создание кода T4 для модели "D:\Projects\C#\IbragimovD_Autoservice_copy\IbragimovD_Autoservice.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

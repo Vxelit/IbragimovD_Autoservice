@@ -24,7 +24,7 @@ namespace IbragimovD_Autoservice
         public int ID { get; set; }
         public string Title { get; set; }
         public string MainImagePath { get; set; }
-        public string DurationInSeconds { get; set; }
+        public int DurationInSeconds { get; set; }
         public decimal Cost { get; set; }
         public Nullable<double> Discount { get; set; }
 
