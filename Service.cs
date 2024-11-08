@@ -11,7 +11,8 @@ namespace IbragimovD_Autoservice
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Windows.Media;
+
     public partial class Service
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,7 +25,7 @@ namespace IbragimovD_Autoservice
         public int ID { get; set; }
         public string Title { get; set; }
         public string MainImagePath { get; set; }
-        public int DurationInSeconds { get; set; }
+        public int Duration { get; set; }
         public decimal Cost { get; set; }
         public Nullable<double> Discount { get; set; }
 
@@ -42,11 +43,58 @@ namespace IbragimovD_Autoservice
                 this.Discount = Convert.ToDouble(value) / 100;
             }
         }
+
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientService> ClientService { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ServicePhoto> ServicePhoto { get; set; }
+    
+        public string OldCost
+        {
+            get
+            {
+                if (Discount > 0)
+                {
+                    return (Math.Round(Cost * 100) / 100).ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+
+        public decimal NewCost
+        {
+            get
+            {
+                if (Discount > 0) {
+                    return Math.Round((((decimal)Cost - (decimal)Cost * (decimal)DiscountInt / 100)) * 100) / 100;
+                }
+                else
+                {
+                    return Math.Round((decimal)Cost * 100) / 100;
+                }
+            
+            }
+        }
+
+        public SolidColorBrush FonStyle
+        {
+            get
+            {
+                if (Discount > 0)
+                {
+                    return (SolidColorBrush)new BrushConverter().ConvertFromString("LightGreen");
+                }
+                else
+                {
+                    return (SolidColorBrush)new BrushConverter().ConvertFromString("White");
+                }
+            }
+        }
+    
     }
 }

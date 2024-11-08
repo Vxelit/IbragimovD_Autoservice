@@ -45,8 +45,41 @@ namespace IbragimovD_Autoservice
             if (StartDate.Text == "")
                 errors.AppendLine("Укажите дату услуги");
 
-            if (TBStart.Text == "")
+            if (TBStart.Text == "") // проверка  написана самостоятельно
                 errors.AppendLine("Укажите время начала услуги");
+            else
+            {
+                string s = TBStart.Text;
+
+                string[] start = s.Split(new char[] { ':' });
+
+                if (start.Length == 1)
+                {
+                    errors.AppendLine("Строка время начала услуги введена некорректно");
+                } else
+                {
+                    try
+                    {
+                        int startHour = Convert.ToInt32(start[0].ToString());
+                        int startMin = Convert.ToInt32(start[1].ToString());
+
+                        if (startHour > 24 || startHour < 0)
+                        {
+                            errors.AppendLine("Неправильно введен час начала услуги");
+                        }
+                        if (startMin > 59 || startMin < 0)
+                        {
+                            errors.AppendLine("Неправильно введены минуты начала услуги");
+                        }
+                    }
+                    catch
+                    {
+                        errors.AppendLine("Строка время начала услуги введена некорректно");
+                    }
+                }
+
+            }
+
 
             if (errors.Length > 0)
             {
@@ -71,6 +104,29 @@ namespace IbragimovD_Autoservice
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void TBStart_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string s = TBStart.Text;
+
+            if (s.Length < 5 || !s.Contains(':')) // changed from 3 to 5
+                TBEnd.Text = "";
+            else
+            {
+                string[] start = s.Split(new char[] { ':' });
+                int startHour = Convert.ToInt32(start[0].ToString()) * 60;
+                int startMin = Convert.ToInt32(start[1].ToString());
+
+                int sum = startHour + startMin + _currentService.Duration;
+
+                int EndHour = (sum / 60) % 24;
+                int EndMin = sum % 60;
+
+
+                s = EndHour.ToString() + ":" + EndMin.ToString();
+                TBEnd.Text = s;
             }
         }
     }

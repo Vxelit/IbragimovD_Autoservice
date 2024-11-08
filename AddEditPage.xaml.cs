@@ -50,7 +50,13 @@ namespace IbragimovD_Autoservice
             if (string.IsNullOrWhiteSpace(_currentService.DiscountInt.ToString())) //changed
                 errors.AppendLine("Укажите скидку на услугу");
 
-            if (string.IsNullOrWhiteSpace(_currentService.DurationInSeconds.ToString()) || _currentService.DurationInSeconds == 0)
+            if (_currentService.Duration < 1) // changed to 1 from 0
+                errors.AppendLine("Длительность не может быть меньше чем 1 минута");
+
+            if (_currentService.Duration > 240)
+                errors.AppendLine("Длительность должна быть не больше 240 минут");
+
+            if (string.IsNullOrWhiteSpace(_currentService.Duration.ToString()))
                 errors.AppendLine("Укажите длительность услуги");
 
             if (errors.Length > 0)
@@ -59,20 +65,34 @@ namespace IbragimovD_Autoservice
                 return;
             }
 
-            if (_currentService.ID == 0)
+
+
+            var allServices = IbragimovD_AutoserviceEntities.GetContext().Service.ToList();
+            allServices = allServices.Where(p => p.Title == _currentService.Title).ToList();
+
+            if (allServices.Count == 0)
             {
-                IbragimovD_AutoserviceEntities.GetContext().Service.Add(_currentService);
+                if (_currentService.ID == 0)
+                    IbragimovD_AutoserviceEntities.GetContext().Service.Add(_currentService);
+            }
+            else
+            {
+                MessageBox.Show("Уже существует такая услуга");
             }
 
-            try
+
+            if (_currentService.ID != 0)
             {
-                IbragimovD_AutoserviceEntities.GetContext().SaveChanges();
-                MessageBox.Show("Информация сохранена");
-                Manager.MainFrame.GoBack();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
+                try
+                {
+                    IbragimovD_AutoserviceEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Информация сохранена");
+                    Manager.MainFrame.GoBack();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
 
         }

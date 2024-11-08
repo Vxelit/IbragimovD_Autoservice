@@ -16,9 +16,10 @@ namespace IbragimovD_Autoservice
     public partial class IbragimovD_AutoserviceEntities : DbContext
     {
 
-        private static IbragimovD_AutoserviceEntities _context;
 
-        public static IbragimovD_AutoserviceEntities GetContext()
+        static private IbragimovD_AutoserviceEntities _context;
+
+        static public IbragimovD_AutoserviceEntities GetContext()
         {
             if (_context == null)
                 _context = new IbragimovD_AutoserviceEntities();
